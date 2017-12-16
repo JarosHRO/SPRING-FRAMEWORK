@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<title>Hospital Web</title>
+	<meta charset="UTF-8">
+  	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+	<!--Cabecera-->
+	<header>
+		<nav>
+			<img class="logoheader" src="img/logo.png">
+			<div class="navegador">
+				<a href="index.html">Inicio</a>
+				<a href="citas.html">citas</a>			
+				<a href="contactos.html">Contactame</a>
+			</div>
+		</nav>
+	</header>
+	
+	<center>
+		<h1>Contactanos</h1>
+		<h3>Ingresa tus datos y lo mas pronto posible nos contactaremos con usted.</h3>
+	</center>
+<br>
+<br>
+	<section>
+		<center>
+		<form th:object="${contact}" th:action="@{contactame}" method="post">
+		    <label for="cname"><b>Nombre</b></label>
+		    <input type="text" id="cnombre" name="firstname" >
+
+		    <label for="clastname"><b>Apellido</b></label>
+		    <input type="text" id="capellido" name="lastname" >
+
+		    <label for="cmail"><b>Correo Electronico</b></label>
+		    <input type="text" id="cmail" name="email">
+
+		    <label for="subject"><b>Contenido</b></label>
+		    <textarea id="subject" name="contenido" style="height:200px"></textarea>
+
+		    <input type="submit" value="Submit">
+		 </form>
+		 </center>
+	</section>
+<br>
+	<br>
+	<br>
+	<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7567.774404554407!2d-69.92500373812867!3d18.48876784614593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89b9a6689061%3A0x53787b650fd24be3!2sHospital+General+Plaza+de+la+Salud!5e0!3m2!1ses-419!2sdo!4v1513301859798" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+	<footer>
+		<center class="derechos">
+		Copyright © 2017 Trabajo Final Java Avanzado Jairo Rodriguez
+		</center>
+	</footer>
+
+
+</body>
+</html>

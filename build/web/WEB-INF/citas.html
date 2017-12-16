@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hospital Web</title>
+	<meta charset="UTF-8">
+  	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+	<!--Cabecera-->
+	<header>
+		<nav>
+			<img class="logoheader" src="img/logo.png">
+			<div class="navegador">
+				<a href="index.html">Inicio</a>
+				<a href="citas.html">Citas</a>		
+				<a href="contactos.html">Contactame</a>
+			</div>
+		</nav>
+	</header>
+	
+	<br>
+	<br>
+	<br>
+	<section>
+		
+	
+	<div>
+	    <div class="col-md-3">
+			<div class="caption">
+	            <center>
+				<br>
+				<h2>Haz tu cita</h2>
+				<br>
+				<form th:object="${userpass}" th:action="@{ingresarcita}" method="post">
+			  		<b>Cedula:</b>
+			  		<input type="text" name="cedula" size="20"><br>
+			  		<b>Contraseña:</b>
+			  		<input type="text" name="pass" size="20">
+			  		<br>
+			  	
+			  		<br><br>
+			 		
+				</form>
+				</center>
+	            <div id='oculto' style='display:none;'>
+	            	<center>
+	            	<form th:object="${cita}" th:action="@{crearcita}" method="post">
+					<b>Dia:</b> <br>			
+					<input type="date" name="dma" size="20" min=""><br>
+					<b>Hora:</b>
+					<select id="hcita" name="horacita">
+					      <option value="ocho">8:00</option>
+					      <option value="nueve">9:00</option>
+					      <option value="diez">10:00</option>
+					      <option value="once">11:00</option>
+					      <option value="unat">1:00</option>
+					      <option value="dost">2:00</option>
+					      <option value="trest">3:00</option>
+					      <option value="cuatrot">4:00</option>
+					</select>
+					<b>Especialidad:</b>
+					<select id="cespecialidad" name="especialidad">
+					      <option value="gnral">General</option>
+					      <option value="ptria">Pediatria</option>
+					      <option value="gnologia">Ginecologia</option>
+					      <option value="otricia">Obstetricia</option>
+					      <option value="cologo">Cardiologo</option>
+					</select>
+					<br>
+					<br>
+					<input class="submit" type="Submit" value="Enviar Cita">
+					</form>
+					</center>
+	            </div>
+	          </div>
+	          <br>
+	          <br>
+	          	<center>
+	 				<input class="submit" type="submit" value="Entrar" onclick="mostrar()">
+	 			</center>
+	    </div>
+	</div>	
+
+
+		
+	</section>
+	<br>
+	<br>
+	<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7567.774404554407!2d-69.92500373812867!3d18.48876784614593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89b9a6689061%3A0x53787b650fd24be3!2sHospital+General+Plaza+de+la+Salud!5e0!3m2!1ses-419!2sdo!4v1513301859798" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+	<footer>
+		<center class="derechos">
+		Copyright © 2017 Trabajo Final Java Avanzado Jairo Rodriguez
+		</center>
+	</footer>
+
+
+	<script type="text/javascript">
+	  function mostrar(){
+	  document.getElementById('oculto').style.display = 'block';}
+	</script>
+	<script type="text/javascript">
+		function ocultar(){
+		document.getElementById('ver').style.display = 'none';}
+	</script>
+
+	
+
+</body>
+</html>

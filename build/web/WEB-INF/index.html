@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Hospital Web</title>
+	<meta charset="UTF-8">
+
+  	<link rel="stylesheet" type="text/css" href="css/estilos.css">
+</head>
+<body>
+	<!--Cabecera-->
+	<header>
+		<nav>
+			<img class="logoheader" src="img/logo.png">
+			<div class="navegador">
+				<a href="index.html">Inicio</a>
+				<a href="citas.html">Citas</a>		
+				<a href="contactos.html">Contactame</a>
+			</div>
+		</nav>
+	</header>
+	<img class="taxy" src="img/ambulancia.jpg">
+	<br>
+	<br>
+	<br>
+	<section>
+		<center>
+		<h4>“Ir juntos es comenzar, mantenerse juntos es progresar, trabajar juntos es triunfar” </h4>
+		<h5><i>Henry Ford.</i></h5>
+		<br>
+		<h2>Registrate</h2>
+		<form th:object="${usuario}" th:action="@{crear}" method="post">
+	  		<b>Nombre:</b>
+	  		<br>
+	  		<input type="text" name="name" size="20">
+	  		<br>
+	  		<b>Cedula:</b>
+	  		<input type="text" name="cedula" size="20"><br>
+	  		<b>Contraseña:</b>
+	  		<input type="text" name="pass" size="20">
+	  		<br>
+	  		
+	  		<br><br>
+	 		<input class="submit" type="submit" value="Submit">
+		</form>
+		</center>
+	</section>
+	<br>
+	<br>
+	<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7567.774404554407!2d-69.92500373812867!3d18.48876784614593!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf89b9a6689061%3A0x53787b650fd24be3!2sHospital+General+Plaza+de+la+Salud!5e0!3m2!1ses-419!2sdo!4v1513301859798" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+	<footer>
+		<center class="derechos">
+		Copyright © 2017 Trabajo Final Java Avanzado Jairo Rodriguez
+		</center>
+	</footer>
+
+
+</body>
+</html>
